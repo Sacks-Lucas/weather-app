@@ -14,6 +14,7 @@ const useCityList = (cities,allWeather,onSetAllWeather) => {
                 const response = await axios.get(url)
                 const allWeatherAux=getAllWeather(response,city,countryCode)
                 //setAllWeather(allWeather =>({...allWeather, ...allWeatherAux}))
+                console.log("akfhaiue")
                 onSetAllWeather({allWeatherAux})
             } catch (error) {
                 if(error.response){
@@ -25,10 +26,7 @@ const useCityList = (cities,allWeather,onSetAllWeather) => {
                 }
             }
         }
-        console.log("cities",cities)
         cities.forEach(({city,countryCode}) => {
-            console.log("allWeather",JSON.stringify(allWeather))
-            console.log("getcityCode",getCityCode(city,countryCode))
             if(allWeather[getCityCode(city,countryCode)]){
                 setWeather(city,countryCode)
         }});

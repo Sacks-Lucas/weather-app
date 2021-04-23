@@ -14,6 +14,7 @@ const App = ()=> {
         setAllWeather(allWeather=>(
             {...allWeather,...weatherCity}))
     }),[setAllWeather])
+    console.log("kshfoie")
     return (
             <Router>
                 <Switch>
