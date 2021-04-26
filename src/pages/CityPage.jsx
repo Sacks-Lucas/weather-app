@@ -27,6 +27,7 @@ const CityPage = ({actions,data}) => {
     const country= countryCode && getCountryNameByCountryCode(countryCode)
     const humidity= weather && weather.humidity
     const wind= weather && weather.wind
+    console.log("giherih")
     return (
         <AppFrame>
                 <Grid container
