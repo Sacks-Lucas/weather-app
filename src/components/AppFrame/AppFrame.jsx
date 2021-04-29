@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import AppBar from '@material-ui/core/AppBar'
@@ -9,8 +9,10 @@ import { Link as LinkRouter} from 'react-router-dom'
 import {IconContext} from 'react-icons'
 import {WiDaySunny} from 'react-icons/wi'
 import Typography from '@material-ui/core/Typography'
+import ErrorBoundary from '../../Common/ErrorBoundary/ErrorBoundary'
 
 const AppFrame = ({children}) => {
+    const iconContextSize = useMemo(()=> ({size:"2em"}),[])
     return (
         <Grid container
             justify="center">
@@ -19,7 +21,7 @@ const AppFrame = ({children}) => {
                     <IconButton color="inherit" aria-label="menu">
                         <Link 
                             component={LinkRouter} to="/main" color="inherit" aria-label="menu">
-                            <IconContext.Provider value={{size:"2em"}}>
+                            <IconContext.Provider value={iconContextSize}>
                                 <WiDaySunny></WiDaySunny>
                             </IconContext.Provider>
                         </Link>
@@ -34,7 +36,7 @@ const AppFrame = ({children}) => {
             sm={11}
             md={10}
             lg={8}>
-                {children}
+                <ErrorBoundary>{children}</ErrorBoundary>
             </Grid>
         </Grid>
     )

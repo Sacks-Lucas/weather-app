@@ -7,13 +7,13 @@ import MainPage from './pages/MainPage'
 import CityPage from './pages/CityPage'
 import NotFoundPage from './pages/NotFoundPage'
 
+const initialValue={
+    allWeather: {},
+    allChartData: {},
+    allForecastItemList:{}
+}
 
 const App = ()=> {
-    const initialValue={
-        allWeather: {},
-        allChartData: {},
-        allForecastItemList:{}
-    }
     const reducer = (state,action) => {
         switch (action.type) {
             case'SET_ALL_WEATHER':
