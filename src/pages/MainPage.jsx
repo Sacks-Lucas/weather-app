@@ -5,7 +5,7 @@ import AppFrame from './../components/AppFrame'
 import Paper from '@material-ui/core/Paper'
 import { getCities } from '../utils/serviceCities'
 
-const MainPage = ({actions,data}) => {
+const MainPage = () => {
     const history=useHistory()
     const onClickHandler = React.useCallback((city,countryCode) =>{
         history.push(`/city/${countryCode}/${city}`)
@@ -14,8 +14,6 @@ const MainPage = ({actions,data}) => {
         <AppFrame>
             <Paper elevation={3}>
                 <CityList
-                    actions={actions}
-                    data={data}
                     cities={getCities()}
                     onClickCity={onClickHandler}/>
             </Paper>
