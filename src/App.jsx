@@ -6,7 +6,7 @@ import WelcomePage from './pages/WelcomePage'
 import MainPage from './pages/MainPage'
 import CityPage from './pages/CityPage'
 import NotFoundPage from './pages/NotFoundPage'
-import {WeatherContext} from './WeatherContext'
+import WeatherContext from './components/WeatherContext'
 
 const App = ()=> {
        return (

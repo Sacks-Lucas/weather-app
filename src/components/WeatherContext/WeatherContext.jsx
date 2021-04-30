@@ -1,8 +1,5 @@
-import React,{useContext, useReducer} from 'react'
-
-const WeatherStateContext= React.createContext()
-
-const WeatherDispatchContext= React.createContext()
+import React,{useReducer} from 'react'
+import {WeatherDispatchContext,WeatherStateContext} from '../../utils/utils'
 
 const initialValue={
     allWeather: {},
@@ -29,7 +26,6 @@ const reducer = (state,action) => {
     }
 }
 
-
 const WeatherContext = ({children}) =>{
     const [state, dispatch] = useReducer(reducer, initialValue)
     return(
@@ -41,23 +37,5 @@ const WeatherContext = ({children}) =>{
     )
 }
 
-const useWeatherDispatchContext = () =>{
-    const dispatch= useContext(WeatherDispatchContext)
-    if(!dispatch){
-        throw Error("Must set dispatch provider")
-    }
-    return dispatch
-}
-const useWeatherStateContext = () =>{
-    const state= useContext(WeatherStateContext)
-    if(!state){
-        throw Error("Must set state provider")
-    }
-    return state
-}
+export default WeatherContext
 
-export {
-    WeatherContext,
-    useWeatherDispatchContext,
-    useWeatherStateContext
-}

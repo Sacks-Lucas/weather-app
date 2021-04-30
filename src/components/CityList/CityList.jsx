@@ -5,7 +5,8 @@ import Alert from '@material-ui/lab/Alert'
 import useCityList from './../../hooks/useCityList'
 import { getCityCode } from './../../utils/utils'
 import CityListItem from '../CityListItem/CityListItem'
-import { useWeatherDispatchContext, useWeatherStateContext } from '../../WeatherContext'
+import useWeatherDispatchContext from '../../hooks/useWeatherDispatchContext'
+import useWeatherStateContext from '../../hooks/useWeatherStateContext'
 
 const renderCityAndCountry = eventOnClickCity => (cityAndCountry,weather) =>{
     const {city,countryCode}=cityAndCountry
